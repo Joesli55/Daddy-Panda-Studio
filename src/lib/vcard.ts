@@ -1,4 +1,12 @@
 export const generateVCard = () => {
+  // Enviar evento a Google Analytics si está disponible
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'download_vcard', {
+      event_category: 'engagement',
+      event_label: 'vCard Download'
+    });
+  }
+
   const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:González Moreno;Rubén;;;

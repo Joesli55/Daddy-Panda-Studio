@@ -36,6 +36,7 @@ export default function Header({ lang, setLang, t }: Props) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <a href="#inicio" className="flex items-center space-x-3 text-xl font-display font-bold tracking-tight text-[#F5F5F0]">
+          <img src="/logo-daddy-panda-opt.jpeg" alt="Daddy Panda Studio Logo" className="h-10 w-10 rounded-full object-cover border border-white/10" />
           <span id="header-fallback-title">Daddy Panda Studio</span>
         </a>
 

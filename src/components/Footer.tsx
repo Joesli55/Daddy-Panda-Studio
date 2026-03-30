@@ -1,6 +1,8 @@
 import { Language } from '../content';
 import { Instagram, Mail, Phone, Send } from 'lucide-react';
 import { motion } from 'motion/react';
+import { generateVCard } from '../lib/vcard';
+import { Link } from 'react-router-dom';
 
 interface Props {
   t: any;
@@ -47,9 +49,9 @@ export default function Footer({ t, lang, setLang }: Props) {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@daddypanda.com" className="flex items-center space-x-3 text-[#D9D9D2] hover:text-[#7CFF2B] transition-colors group">
+                <a href="mailto:info@daddypandastudio.com" className="flex items-center space-x-3 text-[#D9D9D2] hover:text-[#7CFF2B] transition-colors group">
                   <Mail size={18} className="text-white/40 group-hover:text-[#7CFF2B] transition-colors" />
-                  <span>info@daddypanda.com</span>
+                  <span>info@daddypandastudio.com</span>
                 </a>
               </li>
               <li>
@@ -92,8 +94,9 @@ export default function Footer({ t, lang, setLang }: Props) {
             
             <div className="pt-8 md:pt-0">
               <ul className="space-y-2 text-sm text-white/40">
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.legal}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a></li>
+                <li><button onClick={generateVCard} className="hover:text-[#7CFF2B] transition-colors text-left">Descargar Contacto (vCard)</button></li>
+                <li><Link to="/aviso-legal" className="hover:text-white transition-colors">{t.footer.legal}</Link></li>
+                <li><Link to="/politica-privacidad" className="hover:text-white transition-colors">{t.footer.privacy}</Link></li>
               </ul>
             </div>
           </div>
@@ -103,7 +106,7 @@ export default function Footer({ t, lang, setLang }: Props) {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/30 font-medium tracking-wide">
           <p>&copy; {new Date().getFullYear()} Daddy Panda Studio. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0">daddypanda.com</p>
+          <p className="mt-2 sm:mt-0">daddypandastudio.com</p>
         </div>
 
       </motion.div>
